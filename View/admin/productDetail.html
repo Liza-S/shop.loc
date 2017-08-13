@@ -1,0 +1,39 @@
+<div class="grid-form1"> 
+    <form class="form-horizontal">
+        <div class="form-group">
+            <div class="col-md-12">Товар - <?=$data['title']?> ( <?=$data['id']?> )</div>           
+        </div>
+    </form>
+</div> 
+
+<div class="grid-form1">
+
+    <!-- <div id="imgWrapper" style="text-align: center; margin-bottom: 16px;"> -->
+        <img src="<?=$data['img_src']?>" style="max-width: 100%; margin-bottom: 30px;">
+    <!-- </div> -->
+
+    <div class="row">
+        <div class="col-md-2">Категория</div>
+        <div class="col-md-10"><?=$data['category_name']?></div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-2">Описание</div>
+        <div class="col-md-10"><?=$data['description']?></div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-2">Отображать на сайте?</div>
+        <div class="col-md-10"><?=$data['display'] == 1 ? 'Да' : 'Нет'?></div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-2">На главной?</div>
+        <div class="col-md-10"><?=$data['on_main'] == 1 ? 'Да' : 'Нет'?></div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-2">Цена</div>
+        <div class="col-md-10">$<?=$data['price']?></div>
+    </div>
+

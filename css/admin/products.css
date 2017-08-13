@@ -1,0 +1,22 @@
+.addProduct{
+	float: left;
+	width: 170px;
+	height: 40px;
+	color: white;
+	background-color: green;
+	border-radius: 7px;
+	text-align: center;
+	line-height: 40px;
+	padding-left: 10px;
+}
+	.addProduct:hover, .addProduct:focus{
+		color: white;
+	}
+
+#description{
+	resize: vertical;
+}
+
+tr td:last-child {
+    /*max-width: 120px;*/
+}

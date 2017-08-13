@@ -1,0 +1,48 @@
+<!-- Modal -->
+<div class="modal fade" id="add_product_modal" tabindex="-1" role="dialog" aria-labelledby="add_product_modalLabel">
+  	<div class="modal-dialog" role="document">
+    	<div class="modal-content">
+    		<form action="" method="post" enctype="multipart/form-data">
+    			<!-- 1024 * 1024 * 20 ///// 20 Mbi  -->
+    			<input type="hidden" name="MAX_FILE_SIZE" value="20971520" />
+      			<div class="modal-header">
+        			<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        			<h4 class="modal-title" id="add_product_modalLabel">Добавление нового товара</h4>
+      			</div>
+
+      			<div class="modal-body">
+	          		<div class="form-group">
+	            		<label for="title" class="control-label">Название:</label>
+	            		<input type="text" class="form-control" id="title" name="title" required>
+	          		</div>
+	          		<div class="form-group">
+	            		<label for="description" class="control-label">Описание:</label>
+	            		<textarea class="form-control" id="description" name="description" required></textarea>
+	          		</div>
+	          		<div class="form-group">
+	            		<label for="categoryId" class="control-label">Поместить в:</label>
+            			<select name="categoryId" id="categoryId" class="form-control1">
+	            			<option value="0"></option>
+            			</select>
+	          		</div>
+	          		<div class="form-group">
+	            		<label for="price" class="control-label">Цена:</label>
+	            		<input type="text" class="form-control" id="price" name="price" required>
+	          		</div>
+
+	          		<div class="form-group">
+	          			Изображение товара <input type="file" name="file">
+	          		</div>
+
+	          		<div class="checkbox-inline1"><label><input type="checkbox" name="display" > Показать на сайте</label></div>
+	          		<div class="checkbox-inline1"><label><input type="checkbox" name="on_main" > Показать на главной</label></div>
+      			</div>
+
+      			<div class="modal-footer">
+			        <input type="submit" class="btn btn-success" value="Подтвердить">
+			        <button type="button" class="btn btn-danger" data-dismiss="modal">Отмена</button>
+      			</div>
+      		</form>
+    	</div>
+  	</div>
+</div>

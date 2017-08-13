@@ -1,0 +1,65 @@
+<div class="grid-form1"> 
+	<form class="form-horizontal">
+		<div class="form-group">
+            <div class="col-md-12">Изменение товара - nokia 3310 ( 1 )</div>			
+        </div>
+    </form>
+</div> 
+
+
+<div class="grid-form1">
+	<form method="POST" action='' enctype="multipart/form-data">
+
+		<!-- 1024 * 1024 * 20 ///// 20 Mbi  -->
+		<input type="hidden" name="MAX_FILE_SIZE" value="20971520" />
+
+
+
+		<div class="form-group">
+	    	<label for="title">Название товара</label>
+	    	<input type="text" class="form-control" name="title" id="title" placeholder="Название товара" value="nokia 3310">
+	  	</div>
+
+  		<div class="form-group">
+    		<label for="categoryId" class="control-label">Название категории</label>
+			<select name="categoryId" id="categoryId" class="form-control1">
+													    <option value="1" selected >телефоны</option>		            		    
+							</select>
+  		</div>
+
+	 	<div class="form-group">
+	    	<label for="description">Описание</label>
+	    	<input type="text" class="form-control" name="description" id="description" placeholder="Описание" value="Новый взгляд на легендарную форму корпуса
+
+Новый Nokia 3310 наследует культовый силуэт оригинальной модели. Телефон имеет выразительный современный интерфейс, а на поляризованном 2.4-дюймовом экране с закругленными углами все отлично видно даже при ярком солнечном освещении. Новая модель тоньше и легче оригинала, но все так же легко узнаваема с классической мелодией Nokia.">
+	  	</div>
+
+	  	<div class="form-group">
+	    	<div class="checkbox-inline1"><label><input type="checkbox" name="display" checked > Показать на сайте?</label></div>
+	  	</div>
+
+	  	<div class="form-group">
+	    	<div class="checkbox-inline1"><label><input type="checkbox" name="on_main" checked > Показать на главной?</label></div>
+	  	</div>
+
+	  	<div class="form-group">
+	    	<label for="price">Цена</label>
+	    	<input type="text" class="form-control" id="price" placeholder="Цена" name="price" value="74.5">
+	  	</div>
+
+
+	  	<div class="form-group">
+	    	<label>Фото</label>
+	    	<div><img src="/images/nokia_3310.jpg" style="max-width: 100%;"></div>
+	  	</div>
+
+	  	<div class="form-group">
+	  		Выберите новое изображение <input type="file" name="file">
+	  	</div>
+
+	  	<input type="hidden" name="id" value="1">
+
+	  	<input type="submit" class="btn btn-success" value="Подтвердить">
+	  	<a href="http://shop.loc/admin/products/telephoni/">Отмена</a>
+	</form>
+</div>

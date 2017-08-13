@@ -1,0 +1,7 @@
+php_value error_reporting E_ALL
+php_value session.auto_start 1
+
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule !((\.(js|json|ico|xml|gif|jpg|jpeg|jpg|png|svg|css|txt|doc|pdf|swf|woff|woff2|eot|otf|swg|ttf)$)) index.php

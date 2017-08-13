@@ -1,0 +1,51 @@
+.container{
+	font-size: 18px;
+	padding-bottom: 100px;
+}
+
+	.container .image img{
+		max-height: 150px;
+	}
+
+	.container .price{
+		text-align: center;
+		line-height: 150px;
+	}
+
+	.container .product{
+		border-bottom: 1px solid #ccc;
+		margin-bottom: 40px;
+	}
+
+	.container .product:nth-last-child(1){
+		border: none;
+		margin-bottom: 0;
+	}
+
+.search_msg{
+	padding: 2%;
+	text-align: center;
+	padding-bottom: 50px;
+}
+	.search_msg p{
+		font-size: 16px;
+		font-family: roboto;
+	}
+
+	.search_msg p:first-child{
+		font-weight: bold;
+	}
+
+
+.title{
+	height: 25px;
+}
+
+	.title a{
+		font-weight: bold;
+	    color: black;
+	}
+
+		.title a:hover{
+			color: #337ab7;
+		}

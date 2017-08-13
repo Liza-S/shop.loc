@@ -1,0 +1,41 @@
+<link rel="stylesheet" type="text/css" href="/css/admin/category.css">
+<script type="text/javascript" src="/js/admin/category.js"></script>
+
+<div class="grid-form1"> 
+	<form class="form-horizontal">
+		<div class="form-group">
+			<div class="col-sm-1"></div>
+			<a href="#" class="hvr-icon-float-away col-24 addProduct" data-toggle="modal" data-target="#add_category_modal">Добавить категорию</a>
+        </div>
+    </form>
+</div> 
+
+<div class="grid-form1"> 
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Название категории</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        <? $countCat = count($data['categories']);?>
+        <? $counter = 0 ?>
+        <? foreach($data['categories'] as $cat):
+            $counter++; ?>
+
+        <tr>
+            <td class="categoryName"><?=$cat['name']?></td>
+            <td>
+                <a class="changeCategoryName" data-categoryId="<?=$cat['id']?>"  href="">Изменить</a>&nbsp;&nbsp;
+                <a class='deleteCategory' data-categoryId="<?=$cat['id']?>" href="http://shop.loc/admin/category/<?=$cat['id']?>/del/">Удалить</a>&nbsp;&nbsp;
+                <a class='hideCategory' data-action='<?= $cat['display'] == 0 ? 'show' : 'hide' ?>' data-categoryId="<?=$cat['id']?>" href="http://shop.loc/admin/category/<?=$cat['id']?>/hide/"><?= $cat['display'] == 0 ? 'Показать' : 'Скрыть' ?></a>
+            </td>
+        </tr>
+        <? endforeach; ?>
+        </tbody>
+    </table>
+</div>
+
+
+<? require_once 'modal_addCategory.html'; ?>

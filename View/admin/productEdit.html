@@ -1,0 +1,69 @@
+<div class="grid-form1"> 
+	<form class="form-horizontal">
+		<div class="form-group">
+            <div class="col-md-12">Изменение товара - <?=$data['title']?> ( <?=$data['id']?> )</div>			
+        </div>
+    </form>
+</div> 
+
+
+<div class="grid-form1">
+	<form method="POST" action='/admin/product_change/' enctype="multipart/form-data">
+
+		<!-- 1024 * 1024 * 20 ///// 20 Mbi  -->
+		<input type="hidden" name="MAX_FILE_SIZE" value="20971520" />
+
+
+
+		<div class="form-group">
+	    	<label for="title">Название товара</label>
+	    	<input type="text" class="form-control" name="title" id="title" placeholder="Название товара" value="<?=$data['title']?>">
+	  	</div>
+
+  		<div class="form-group">
+    		<label for="categoryId" class="control-label">Название категории</label>
+			<select name="categoryId" id="categoryId" class="form-control1">
+				<option value="<?=$data['category_id']?>" selected style="background-color: rgb(178, 255, 0)"><?=$data['category_name']?></option>
+					<? $countCat = count($data['categories']);?>
+	                <? $counter = 0 ?>
+	                <? foreach($data['categories'] as $cat):
+                    	$counter++; ?>
+                    <option value="<?=$cat['id']?>" ><?=$cat["name"]?></option> 
+				<?endforeach;?>
+			</select>
+  		</div>
+
+	 	<div class="form-group">
+	    	<label for="description">Описание</label>
+	    	<input type="text" class="form-control" name="description" id="description" placeholder="Описание" value="<?=$data['description']?>">
+	  	</div>
+
+	  	<div class="form-group">
+	    	<div class="checkbox-inline1"><label><input type="checkbox" name="display" <?=$data['display'] == 1 ? checked : ''?> > Показать на сайте?</label></div>
+	  	</div>
+
+	  	<div class="form-group">
+	    	<div class="checkbox-inline1"><label><input type="checkbox" name="on_main" <?=$data['on_main'] == 1 ? checked : ''?> > Показать на главной?</label></div>
+	  	</div>
+
+	  	<div class="form-group">
+	    	<label for="price">Цена</label>
+	    	<input type="text" class="form-control" id="price" placeholder="Цена" name="price" value="<?=$data['price']?>">
+	  	</div>
+
+
+	  	<div class="form-group">
+	    	<label>Фото</label>
+	    	<div><img src="<?=$data['img_src']?>" style="max-width: 100%;"></div>
+	  	</div>
+
+	  	<div class="form-group">
+	  		Выберите новое изображение <input type="file" name="file">
+	  	</div>
+
+	  	<input type="hidden" name="id" value="<?=$data['id']?>">
+
+	  	<input type="submit" class="btn btn-success" value="Подтвердить">
+	  	<a href="http://shop.loc/admin/products/<?=$cat['url']?>/">Отмена</a>
+	</form>
+</div>

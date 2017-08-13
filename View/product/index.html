@@ -1,0 +1,50 @@
+<?$prod = $data['product'][0]?>
+<div class="main_bg">
+<div class="wrap">	
+	<div class="main">
+	<!-- start content -->
+	<div class="single">
+			<!-- start span1_of_1 -->
+			<div class="left_content">
+			<div class="span1_of_1">
+				<!-- start product_slider -->
+				<div class="product-view">
+					<img src="<?=$prod['img_src']?>" alt="<?=$prod['title']?>" title="<?=$prod['title']?>" />
+				</div>
+				<!-- end product_slider -->
+			</div>
+			<!-- start span1_of_1 -->
+			<div class="span1_of_1_des">
+				  <div class="desc1">
+					<h3><?=$prod['title']?></h3>
+					<h5>Price: $<?=$prod['price']?></h5>
+					<div class="available">
+						<div class="btn_form">
+							<form method="POST" action="/add_to_basket/"   onsubmit="addToBasket(); return false;">
+								<input type="submit" value="add to cart" title="" />
+								<input type="hidden" class="productId" name="productId" value="<?=$prod['id']?>">
+							</form>
+						</div>
+						<div class="clear"></div>
+					</div>
+			   	 </div>
+			   	</div>
+			   	<div class="clear"></div>
+			   	<!-- start tabs -->					
+			        <div class="description">
+			        	<p class="desc1 p">
+			        		
+			        		<?=$prod['description']?>
+
+			        	</p>
+						<div class="clear"></div>
+					</div>
+		         	<!-- end tabs -->
+			   	</div>
+          	    <div class="clear"></div>
+	       </div>	
+	<!-- end content -->
+	</div>
+</div>
+</div>
+

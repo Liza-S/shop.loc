@@ -1,0 +1,81 @@
+<script type="text/javascript" src="/js/admin/order.js"></script>
+
+
+<div class="grid-form1"> 
+	<form class="form-horizontal">
+		<div class="form-group">
+            <div class="col-md-12">Описане заказа ( <?=$data['id']?> )</div>			
+        </div>
+    </form>
+</div> 
+
+<div class="grid-form1">
+
+    <div class="row">
+        <div class="col-md-2">Дата заказа</div>
+        <div class="col-md-10"><?=$data['time']?></div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-2">ФИО</div>
+        <div class="col-md-10"><?=$data['fio']?></div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-2">Почта</div>
+        <div class="col-md-10"><?=$data['email']?></div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-2">Адрес</div>
+        <div class="col-md-10"><?=$data['address']?></div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-2">Оплачен</div>
+        <div class="col-md-10">
+        <? if ($data['paid'] == 1) echo 'Да'; else { ?>
+            <select style="padding: 0;" class="paid" data-orderid="<?=$data['id']?>">
+                <!--<option value="<?=$data['paid']?>"><?=$data['paid'] == 1 ? 'Да' : 'Нет'?></option>-->
+                <option value="0">Нет</option>
+                <option value="1">Да</option>
+                <? } ?>
+            </select>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-2">Общая стоимость заказа</div>
+        <div class="col-md-10">$<?=$data['common_price']?></div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-2">Статус</div>
+        <div class="col-md-10"><?=$data['status'] == 1 ? 'Новый' : $data['status'] == 2 ? 'Выполнен' : $data['status'] == 3 ? 'Отклонен' : $data['status'] == 4 ? 'Архив' : 'Удален'?></div>
+    </div>
+</div>
+
+<div class="grid-form1"> 
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Название</th>
+                <th>Описание</th>
+                <th>Количество</th>
+                <th>Цена</th>
+            </tr>
+        </thead>
+        <tbody>
+
+                        <tr>
+                <td>1</td>
+                <td class="productName" ><a href="http://shop.loc/admin/product/1/">nokia 3310</a></td>
+                <td><?=$data['serialize_data']?></td>
+                <td>2</td>
+                <td>74.5</td>
+            </tr>
+            
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,23 @@
+<link href="/css/search/search.css" rel="stylesheet">
+
+<div class="container">
+
+	<div class="search_msg"><span>По вашему запросу  найденно  результат(ов): </span></div>
+	
+		<div class="row product" data-item-price="100" data-item-id="1"> 
+		  	<div class="col-md-3 image" ><a href="http://shop.loc/product/1/"><img src="/images/nokia_3310.jpg"></a></div>
+		  	<div class="col-md-7">
+				<div class="title"><a href="http://shop.loc/product/1/">nokia 3310</a></div>
+				<div class="description" >Новый взгляд на легендарную форму корпуса
+				Новый Nokia 3310 наследует культовый силуэт оригинальной модели. Телефон имеет выразительный современный интерфейс, а на поляризованном 2.4-дюймовом экране с закругленными углами все отлично видно даже при ярком солнечном освещении. Новая модель тоньше и легче оригинала, но все так же легко узнаваема с классической мелодией Nokia.</div>
+		  	</div>
+		  	<div class="col-md-2 price">$100</div>
+		</div>
+
+
+</div>
+
+<div class="search_msg">
+	<p>По вашему запросу "<?= $data['search_str'] ?>", к сожалению, ничего не найдено.</p>
+	<p>Попробуйте использовать другой поисковый запрос.</p>
+</div>

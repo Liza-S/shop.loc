@@ -1,0 +1,62 @@
+.container{
+	font-family: 'open sans';
+	margin-top: 60px;
+}
+.titles div{
+   	font-weight: bold;
+}
+
+.container .table_header,
+.container .product{
+	padding-bottom: 10px;
+   	border-bottom: 1px solid #ccc;
+   	margin-bottom: 10px;
+}
+
+.container .product:nth-last-child(2){
+	border-bottom: none;
+}
+
+.container img {
+    max-width: 100%;
+    max-height: 200px;
+}
+
+.container .count{
+	padding: 0;
+    padding-right: 25px;
+}
+
+.container .price, 
+.container .multiple, 
+.container .common_price, 
+.container .delete{
+	line-height: 34px;
+}
+
+.container .delete img{
+	vertical-align: text-top;
+}
+
+.container .basket_control{
+	margin: 50px 0;
+}
+
+.container .delete{
+	cursor: pointer;
+}
+
+.emptyBasket{
+	font-family: roboto;
+	margin-bottom: 60px;
+	text-align: center;
+	margin-top: 60px;
+}
+
+#customerAddress{
+	resize: vertical;
+}
+
+.formError {
+    color: #d9534f !important;
+}

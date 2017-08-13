@@ -1,0 +1,37 @@
+<link rel="stylesheet" type="text/css" href="/css/admin/category.css">
+<script type="text/javascript" src="/js/admin/category.js"></script>
+
+<div class="grid-form1"> 
+	<form class="form-horizontal">
+		<div class="form-group">
+			<div class="col-sm-1"></div>
+			<a href="#" class="hvr-icon-float-away col-24 addProduct" data-toggle="modal" data-target="#add_category_modal">Добавить категорию</a>
+        </div>
+    </form>
+</div> 
+
+<div class="grid-form1"> 
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Название категории</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+
+        <tr>
+            <td class="categoryName">телефоны</td>
+            <td>
+                <a class="changeCategoryName" data-categoryId="1"  href="">Изменить</a>&nbsp;&nbsp;
+                <a class='deleteCategory' href="http://shop.loc/admin/category/1/del/">Удалить</a>&nbsp;&nbsp;
+                <a href="http://shop.loc/admin/category/1/hide/">Скрыть</a>
+            </td>
+        </tr>
+            
+        </tbody>
+    </table>
+</div>
+
+
+<? require_once 'modal_addCategory.html'; ?>

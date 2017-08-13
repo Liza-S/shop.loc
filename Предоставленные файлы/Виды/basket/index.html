@@ -1,0 +1,45 @@
+<!-- basket -->
+
+
+<link href="/css/basket/basket.css" rel="stylesheet">
+<script type="text/javascript" src="/js/basket.js"></script>
+
+<div class="container text-center">
+	<div class="row table_header titles">
+	  	<div class="col-md-2">Название</div>
+	  	<div class="col-md-2">Фото</div>
+	  	<div class="col-md-3">Описание товара</div>
+	  	<div class="col-md-1">Цена</div>
+	  	<div class="col-md-2 text-right">Количество</div>
+	  	<div class="col-md-1">Сумма</div>
+	  	<div class="col-md-1">Удалить</div>
+	</div>
+
+		<div class="row product" data-item-price="100" data-item-id="1"> 
+		  	<div class="col-md-2" ><a href="/product/1/">nokia 3310</a></div>
+		  	<div class="col-md-2" ><img src="/images/nokia_3310.jpg"></div>
+		  	<div class="col-md-3 text-left" >Новый взгляд на легендарную форму корпуса
+
+			Новый Nokia 3310 наследует культовый силуэт оригинальной модели. Телефон имеет выразительный современный интерфейс, а на поляризованном 2.4-дюймовом экране с закругленными углами все отлично видно даже при ярком солнечном освещении. Новая модель тоньше и легче оригинала, но все так же легко узнаваема с классической мелодией Nokia.
+			</div>
+		  	<div class="col-md-1 price">$100</div>
+		  	<div class="col-md-1 multiple">x</div>
+		  	<div class="col-md-1 count"><input type="text" class="form-control text-center" maxlength='6'  name="count" value="1"></div>
+		  	<div class="col-md-1 common_price">$100</div>
+		  	<div class="col-md-1 delete"><a href="javascript:void(0);"><img src="/images/close.png"></a></div>
+		</div>
+
+
+	<div class="row basket_control">
+		<div class="col-md-4">
+			<button type="button" class="order btn btn-success btn-lg btn-block" data-toggle="modal" data-target="#order_modal">Оформить заказ</button>
+		</div>
+		<div class="col-md-5"></div>
+  		<div class="col-md-3" style="text-align: right; line-height: 46px;">
+  			<a href="javascript:void(0);" class="clear_basket" style="text-decoration: underline; ">очистить корзину</a>
+		</div>
+	</div>
+
+</div>
+
+<? require 'modal_orderForm.html' ?>

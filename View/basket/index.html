@@ -1,0 +1,49 @@
+<!-- basket -->
+
+<??>
+<link href="/css/basket/basket.css" rel="stylesheet">
+<script type="text/javascript" src="/js/basket.js"></script>
+
+<div class="container text-center">
+	<div class="row table_header titles">
+	  	<div class="col-md-2">Название</div>
+	  	<div class="col-md-2">Фото</div>
+	  	<div class="col-md-3">Описание товара</div>
+	  	<div class="col-md-1">Цена</div>
+	  	<div class="col-md-2 text-right">Количество</div>
+	  	<div class="col-md-1">Сумма</div>
+	  	<div class="col-md-1">Удалить</div>
+	</div>
+	<div>
+		<? $countProd = count($data['basketProduct']);?>
+		<? $counter = 0 ?>
+		<? foreach($data['basketProduct'] as $prod):
+    		$counter++; ?>
+
+		<div class="row product table" data-item-price="<?=$prod['price']?>" data-prodId="<?=$prod['id']?>"> 
+		  	<div class="col-md-2 prodTitle" ><a href="/product/<?=$prod['id']?>/"><?=$prod['title']?></a></div>
+		  	<div class="col-md-2" ><img src="<?=$prod['img_src']?>"></div>
+		  	<div class="col-md-3 text-left" ><?=$prod['description']?>
+			</div>
+		  	<div class="col-md-1 price"><?=$prod['price']?></div>
+		  	<div class="col-md-1 multiple">x</div>
+		  	<div class="col-md-1 count"><input type="text" class="form-control text-center" maxlength='6'  name="count" value="<?=$prod['count']?>"></div>
+		  	<div class="col-md-1 common_price"><?=$prod['price']*$prod['count']?></div>
+		  	<div class="col-md-1 delete"><a data-prodId="<?=$prod['id']?>" href="javascript:void(0);"><img src="/images/close.png"></a></div>
+		</div>
+		<?endforeach;?>
+	</div>
+	
+	<div class="row basket_control">
+		<div class="col-md-4">
+			<button type="button" class="order btn btn-success btn-lg btn-block" data-toggle="modal" data-target="#order_modal">Оформить заказ</button>
+		</div>
+		<div class="col-md-5"></div>
+  		<div class="col-md-3" style="text-align: right; line-height: 46px;">
+  			<a href="javascript:void(0);" class="clear_basket" style="text-decoration: underline; ">очистить корзину</a>
+		</div>
+	</div>
+
+</div>
+
+<? require 'modal_orderForm.html' ?>

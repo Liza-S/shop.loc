@@ -1,0 +1,51 @@
+<script type="text/javascript" src="/js/admin/orders.js"></script>
+<div class="grid-form1"> 
+	<form class="form-horizontal">
+		<div class="form-group">
+			<div class='col-md-12'>Заказы</div>
+        </div>
+    </form>
+</div> 
+
+
+<div class="grid-form1">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Дата</th>
+                <th>ФИО</th>
+                <th>Оплачено?</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <? $countOrds = count($data['orders']);?>
+            <? $counter = 0 ?>
+            <? foreach($data['orders'] as $ords):
+                $counter++; ?>
+                <tr>
+                    <td><a href="http://shop.loc/admin/order/<?=$ords['id']?>/"><?=$ords['id']?></a></td>
+                    <td><a href="http://shop.loc/admin/order/<?=$ords['id']?>/"><?=$ords['time']?></a></td>
+                    <td><a href="http://shop.loc/admin/order/<?=$ords['id']?>/"><?=$ords['fio']?></a></td>
+                    <td><a href="http://shop.loc/admin/order/<?=$ords['id']?>/"><?=$ords['paid'] == 1 ? 'Оплачен' : 'Не оплачен'?></a></td>
+                    <td>
+                        <? if ($ords['status'] == 1) { ?>
+                            <a data-orderId="<?=$ords['id']?>" class="reject" href="http://shop.loc/admin/order/<?=$ords['id']?>/move_rejected/">Отклонить</a>&nbsp;&nbsp;
+                            <a data-orderId="<?=$ords['id']?>" class="done" href="http://shop.loc/admin/order/<?=$ords['id']?>/move_done/">Выполнить</a>&nbsp;&nbsp;
+                            <a data-orderId="<?=$ords['id']?>" class="delete" href="http://shop.loc/admin/order/<?=$ords['id']?>/move_deleted/">Удалить</a>&nbsp;&nbsp;
+                            <a data-orderId="<?=$ords['id']?>" class="archive" href="http://shop.loc/admin/order/<?=$ords['id']?>/move_archived/">Архив</a>&nbsp;&nbsp;
+                        <?  } else if ($ords['status'] == 2) { ?> 
+                            <a data-orderId="<?=$ords['id']?>" class="archive" href="http://shop.loc/admin/order/<?=$ords['id']?>/move_archived/">Архив</a>&nbsp;&nbsp;
+                        <?  } else if ($ords['status'] == 3) { ?>
+                            <a data-orderId="<?=$ords['id']?>" class="delete" href="http://shop.loc/admin/order/<?=$ords['id']?>/move_deleted/">Удалить</a>&nbsp;&nbsp;
+                            <a data-orderId="<?=$ords['id']?>" class="archive" href="http://shop.loc/admin/order/<?=$ords['id']?>/move_archived/">Архив</a>&nbsp;&nbsp;
+                        <?  } else if ($ords['status'] == 4) { ?>
+                            <a data-orderId="<?=$ords['id']?>" class="delete" href="http://shop.loc/admin/order/<?=$ords['id']?>/move_deleted/">Удалить</a>&nbsp;&nbsp;
+                        <?  } ?>
+                    </td>
+                </tr>
+            <?endforeach;?>
+        </tbody>
+    </table> 
+</div>

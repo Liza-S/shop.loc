@@ -1,0 +1,52 @@
+<div class="header_bg">
+<div class="wrap">
+	<div class="header">
+		<div class="logo">
+			<a href="/"><img src="/images/logo.png" alt=""/> </a>
+		</div>
+		<div class="h_icon">
+		<ul class="icon1 sub-icon1">
+			<li><a class="active-icon c1" href="/basket/"><i id="basketPrice"><?= '$'.$data['basketPrice']?></i></a></li>
+		</ul>
+		</div>
+		<div class="h_search">
+    		<form id="search_form" action="/search/">
+    			<input type="text" value="" name="search_str">
+    			<input type="submit" value="">
+    		</form>
+		</div>
+		<div class="clear"></div>
+	</div>
+</div>
+</div>
+
+<div class="header_btm">
+<div class="wrap">
+	<div class="header_sub">
+		<div class="h_menu">
+			<ul class="category_menu">
+                <!-- <? $active = 'category' ?> -->
+                <? if('/' == $_SERVER['REQUEST_URI']) $active = 'active';?>
+                <li class="<?=$active?>"><a href="/">На главную</a></li>
+                
+                <? if(!empty($data['categories'])) : ?>
+                <span class='vl'> |</span>
+                <? $countCat = count($data['categories']);?>
+                <? $counter = 0 ?>
+                <? foreach($data['categories'] as $cat):
+                $counter++;
+                $active = '';
+                if (strpos($_SERVER['REQUEST_URI'], $cat['url'])) $active = 'active';
+                ?>
+                <li class="<?=$active?>"><a href="/category/<?= $cat['url'] ?>/"><?= $cat['name']?></a></li>
+                <? if($counter < $countCat): ?>
+                <span class="vl"> |</span>
+            <? endif; ?>
+        <? endforeach; ?>
+    <? endif ?>
+			</ul>
+		</div>		  
+	<div class="clear"></div>
+</div>
+</div>
+</div>

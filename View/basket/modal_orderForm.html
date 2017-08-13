@@ -1,0 +1,54 @@
+<!-- Modal -->
+<? $err = $data['errors'] ?>
+<div class="modal fade" id="order_modal" tabindex="-1" role="dialog" aria-labelledby="order_modalLabel">
+  	<div class="modal-dialog" role="document">
+    	<div class="modal-content">
+    		<form action="/basket/accept_order/" method="post">
+      			<div class="modal-header">
+        			<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        			<h4 class="modal-title" id="order_modalLabel">Оформление заказа</h4>
+      			</div>
+
+      			<div class="modal-body">
+	          		<div class="form-group">
+	            		<label for="customerEmail" class="control-label">E-mail:</label>
+	            		<input type="email" class="form-control" id="customerEmail" name="customerEmail" 
+	            				value="<?= isset($_POST['customerEmail']) ? $_POST['customerEmail'] : '' ?>" required>
+	            		<? if(!empty($err) && !empty($err['customerEmail'])): ?>
+	            			<span class="formError"><?= $err['customerEmail'] ?></span>
+	            		<? endif;?>
+	          		</div>
+
+	          		<div class="form-group">
+	            		<label for="customerPhone_number" class="control-label">Телефонный номер:</label>
+	            		<input type="text" class="form-control" id="customerPhone_number" name="customerPhone_number" 
+	            				value="<?= isset($_POST['customerPhone_number']) ? $_POST['customerPhone_number'] : '' ?>" required>
+	            		<? if(!empty($err) && !empty($err['customerPhone_number'])): ?>
+	            			<span class="formError"><?= $err['customerPhone_number'] ?></span>
+	            		<? endif;?>
+	          		</div>
+
+	          		<div class="form-group">
+	            		<label for="customerFIO" class="control-label">ФИО:</label>
+	            		<input type="text" class="form-control" id="customerFIO" name="customerFIO" value="<?= isset($_POST['customerFIO']) ? $_POST['customerFIO'] : '' ?>" required pattern="\D[^0-9]*">
+	            		<? if(!empty($err) && !empty($err['customerFIO'])): ?>
+	            			<span class="formError"><?= $err['customerFIO'] ?></span>
+	            		<? endif;?>
+	          		</div>
+	          		<div class="form-group">
+	            		<label for="customerAddress" class="control-label">Адрес:</label>
+	            		<textarea class="form-control" id="customerAddress" name="customerAddress" required><?= isset($_POST['customerAddress']) ? $_POST['customerAddress'] : '' ?></textarea>
+	            		<? if(!empty($err) && !empty($err['customerAddress'])): ?>
+	            			<span class="formError"><?= $err['customerAddress'] ?></span>
+	            		<? endif;?>
+	          		</div>
+      			</div>
+
+      			<div class="modal-footer">
+			        <input type="submit" class="btn btn-success" value="Подтвердить">
+			        <button type="button" class="btn btn-danger" data-dismiss="modal">Отмена</button>
+      			</div>
+      		</form>
+    	</div>
+  	</div>
+</div>

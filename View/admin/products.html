@@ -1,0 +1,67 @@
+<div class="mother-grid-inner"><link rel="stylesheet" type="text/css" href="/css/admin/products.css">
+<script type="text/javascript" src="/js/admin/product.js"></script>
+
+<div class="grid-form1"> 
+    <form class="form-horizontal">
+        <div class="form-group">
+            <div class="col-sm-1"></div>
+            <a href="#" class="hvr-icon-float-away col-24 addProduct" data-toggle="modal" data-target="#add_product_modal">Добавить товар</a>
+            <label for="catUrl" class="col-sm-2 control-label">Товары категории</label>
+            <div class="col-sm-4">
+                    <select name="catUrl" id="catUrl" class="form-control1">
+                        <? $countCat = count($data['categories']);?>
+                        <? $counter = 0 ?>
+                        <? foreach($data['categories'] as $cat):
+                            $counter++; ?>
+                        <option value="<?=$cat['url']?>" data-categoryId="<?=$cat['id']?>" ><?=$cat['name']?></option>
+                        <? endforeach; ?> 
+                    </select>
+                
+            </div>
+        </div>
+    </form>
+</div> 
+
+<div class="grid-form1"> 
+    <table class="table table-bordered" id="products">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Название</th>
+                <th>Описание</th>
+                <th>Цена</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        <? $countProd = count($data['products']);?>
+        <? $counter = 0 ?>
+        <? foreach($data['products'] as $prod):
+            $counter++; ?>
+
+            <tr>
+                <td><?=$prod['id']?></td>
+                <td class="productName" ><a href="http://shop.loc/admin/product/<?=$prod['id']?>/"><?=$prod['title']?></a></td>
+                <td><?=$prod['description']?></td>
+                <td><?=$prod['price']?></td>
+                <td>
+                    <a href="http://shop.loc/admin/product_edit/<?=$prod['id']?>/"
+                    data-prodId="<?=$prod['id']?>" class='prod'>Изменить</a>&nbsp;&nbsp;
+                    <a href="http://shop.loc/admin/product/<?=$prod['id']?>/del/"
+                    data-prodId="<?=$prod['id']?>" class='productDel'>Удалить</a>&nbsp;&nbsp;
+                    <a href="http://shop.loc/admin/product/<?=$prod['id']?>/hide/"
+                    data-prodId="<?=$prod['id']?>"
+                    data-action='<?= $prod['on_main'] == 0 ? 'show' : 'hide' ?>'
+                    class="hideMainProduct"><?=$prod['on_main'] == 0 ? 'Показать на гл. странице' : 'Скрыть с гл. страницы' ?></a>&nbsp;&nbsp;
+                    <a href="http://shop.loc/admin/product/<?=$prod['id']?>/hide/"
+                    data-prodId="<?=$prod['id']?>"
+                    data-action='<?= $prod['display'] == 0 ? 'show' : 'hide' ?>' 
+                    class="hideProduct"><?=$prod['display'] == 0 ? 'Показать' : 'Скрыть' ?></a>
+                </td>
+            </tr>
+        <? endforeach; ?>
+        </tbody>
+    </table>
+</div>
+
+<? require_once 'modal_addProduct.html'; ?>

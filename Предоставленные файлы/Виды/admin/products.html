@@ -1,0 +1,50 @@
+<div class="mother-grid-inner"><link rel="stylesheet" type="text/css" href="/css/admin/products.css">
+<script type="text/javascript" src="/js/admin/product.js"></script>
+
+<div class="grid-form1"> 
+    <form class="form-horizontal">
+        <div class="form-group">
+            <div class="col-sm-1"></div>
+            <a href="#" class="hvr-icon-float-away col-24 addProduct" data-toggle="modal" data-target="#add_product_modal">Добавить товар</a>
+            <label for="catUrl" class="col-sm-2 control-label">Товары категории</label>
+            <div class="col-sm-4">
+                <select name="catUrl" id="catUrl" class="form-control1">
+                                                                                        <option value="telephoni"  >телефоны</option>
+                                    </select>
+            </div>
+        </div>
+    </form>
+</div> 
+
+<div class="grid-form1"> 
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Название</th>
+                <th>Описание</th>
+                <th>Цена</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+
+                        <tr>
+                <td>1</td>
+                <td class="productName" ><a href="http://shop.loc/admin/product/1/">nokia 3310</a></td>
+                <td>Новый взгляд на легендарную форму корпуса
+
+Новый Nokia 3310 наследует культовый силуэт оригинальной модели. Телефон имеет выразительный современный интерфейс, а на поляризованном 2.4-дюймовом экране с закругленными углами все отлично видно даже при ярком солнечном освещении. Новая модель тоньше и легче оригинала, но все так же легко узнаваема с классической мелодией Nokia.</td>
+                <td>74.5</td>
+                <td>
+                    <a href="http://shop.loc/admin/product/1/edit/">Изменить</a>&nbsp;&nbsp;
+                    <a href="http://shop.loc/admin/product/1/del/" class='productDel'>Удалить</a>&nbsp;&nbsp;
+                                            <a href="http://shop.loc/admin/product/1/hide/">Скрыть</a>
+                                    </td>
+            </tr>
+            
+        </tbody>
+    </table>
+</div>
+
+<? require_once 'modal_addProduct.html'; ?>

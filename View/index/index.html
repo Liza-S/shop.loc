@@ -1,0 +1,32 @@
+
+
+
+
+<div class="main_bg">
+<div class="wrap">	
+	<div class="main">
+		<!-- start grids_of_3 -->
+		<div class="grids_of_3">
+			<? $countProd = count($data['products']);?>
+        	<? $counter = 0 ?>
+        	<? foreach($data['products'] as $prod):
+            	$counter++; ?>
+			<div class="grid1_of_3">
+				<a href="http://shop.loc/product/<?=$prod['id']?>">
+					<img src="<?=$prod['img_src']?>" alt="" width='70px'/>
+					<h3><?=$prod['title']?></h3>
+					<div class="price">
+						<h4>$<?=$prod['price']?><span>Подробней</span></h4>
+					</div>
+					<span class="b_btm"></span>
+				</a>
+			</div>
+			<? endforeach; ?>
+		</div>
+
+	
+		<!-- end grids_of_3 -->
+	</div>
+</div>
+</div>
+

@@ -1,0 +1,33 @@
+<link href="/css/search/search.css" rel="stylesheet">
+<div class="container">
+<? $countProd = count($data['search_res']); ?>
+<? if($data['search_res'] == false) { ?>
+<div class='search_msg'>
+	<p>По вашему запросу, к сожалению, ничего не найдено.</p>
+	<p>Попробуйте использовать другой поисковый запрос.</p>
+</div>
+<? } else { ?>
+	
+	 <div class="search_msg"><span>По вашему запросу  найденно  результат(ов): <?=$countProd?></span></div>
+		<? $countProd = count($data['search_res']);?>
+	    <? $counter = 0 ?>
+	    <? foreach($data['search_res'] as $prod):
+	       	$counter++; ?>
+		
+			<div class="row product" data-item-price="<?=$prod['price']?>" data-item-id="<?=$prod['id']?>"> 
+			  	<div class="col-md-3 image" ><a href="http://shop.loc/product/<?=$prod['id']?>/"><img src="<?=$prod['img_src']?>"></a></div>
+			  	<div class="col-md-7">
+					<div class="title"><a href="http://shop.loc/product/<?=$prod['id']?>/"><?=$prod['title']?></a></div>
+					<div class="description" ><?=$prod['description']?></div>
+			  	</div>
+			  	<div class="col-md-2 price">$<?=$prod['price']?></div>
+			</div>
+
+		<?endforeach; ?>
+		<? } ?>
+	</div> 
+
+<!-- <div class="search_msg">
+	<p>По вашему запросу "", к сожалению, ничего не найдено.</p>
+	<p>Попробуйте использовать другой поисковый запрос.</p>
+</div> -->
