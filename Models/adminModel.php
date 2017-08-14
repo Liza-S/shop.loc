@@ -132,13 +132,15 @@ function addProduct() {
 
 function deleteProduct() {
 	$id = $_POST['iD'];
-	/*dd($id);
-	$pic = selectQuery(array('*'), 'products', 'id = '.$id);
-	while ($row = mysql_fetch_object($pic)) {
-		dd($pic);
-	}*/
+	//dd($id);
+	$pic = PATH_TO_DELETE;
+	$img_src = selectQuery(array('img_src'), 'products', 'id = '.$id);
+	//dd($pic);
+	$pic .= $img_src[0]["img_src"];
+	//dd($pic);
+	unlink($pic);
 	return deleteQuery('products', 'id = '.$id);
-	dd($id);
+	//dd($id);
 }
 
 function hideProduct() {
