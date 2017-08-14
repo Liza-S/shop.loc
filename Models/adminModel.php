@@ -125,9 +125,9 @@ function addProduct() {
 	else $onMain = '0';
 	$data = array('id' => 'NULL', 'title' => $name, 'img_src' => '/images/' . $picName, 'price' => $price, 'description' => $description, 'category_id' => $categoryId, 'on_main' => $onMain, 'display' => $display);
 	insertQuery('products', $data);
-	echo 'Продукт успешно добавлен в БД';
+	//echo 'Продукт успешно добавлен в БД';
 	//dd($image);
-    header("refresh: 1; url=http://shop.loc/admin/products/");
+    header("refresh: 0; url=http://shop.loc/admin/products/");
 }
 
 function deleteProduct() {
@@ -202,5 +202,5 @@ function productChange() {
 	$data = array('id' => $id, 'title' => $name, 'img_src' => '/images/' . $picName, 'price' => $price, 'description' => $description, 'category_id' => $categoryId, 'on_main' => $onMain, 'display' => $display);
 	//dd($data);
 	updateQuery('products', $data, 'id = '.$id);
-	header("refresh: 1; url=http://shop.loc/admin/products/");
+	header("refresh: 0; url=http://shop.loc/admin/products/");
 }

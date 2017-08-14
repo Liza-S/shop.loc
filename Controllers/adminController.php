@@ -118,8 +118,8 @@ function category_add() {
 
 	$data = array('id' => 'NULL', 'name' => $name, 'url' =>  $url , 'display' =>$display);
 	insertQuery('categories', $data);
-	echo 'Категория успешно добавлена в БД';
-    header("refresh: 1; url=http://shop.loc/admin/category/");
+	//echo 'Категория успешно добавлена в БД';
+    header("refresh: 0; url=http://shop.loc/admin/category/");
 }
 
 function change_category_name () {
