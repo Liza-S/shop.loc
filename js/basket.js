@@ -14,7 +14,7 @@ function changeCount(){
 
 	// изменение стоимости продукта, у которого меняем количество
 	var $this = $(this),
-		count = Math.abs(+$this.val()),
+		count = Math.floor(Math.abs(+$this.val())),
 		price = $this.parents('.row.product').eq(0).data('item-price'),
 		elId  = $this.parents('.row.product').eq(0).data('prodid');
 
