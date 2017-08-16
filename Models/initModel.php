@@ -62,7 +62,7 @@ function getProductInfo($id) {
 }
 
 function getSearchRes() {
-    $name = $_GET['search_str'];
+    $name = htmlspecialchars($_GET['search_str'], ENT_QUOTES);
     return selectQuery(array('*'),"products", "`title` LIKE '%".$name."%' and display = 1");
     /*dd($s);*/
 }
