@@ -43,17 +43,9 @@ function deleteCategory() {
 	deleteQuery('products', 'category_id = '.$id );
 }
 
-function hideCategory() {
+function hide_showCategory($display) {
 	$id = $_POST['id'];
-	//$display = '0';
-	$data = array('display' => 0);
-	return updateQuery('categories', $data, 'id = '.$id);
-}
-
-function showCategory() {
-	$id = $_POST['id'];
-	//$display = '0';
-	$data = array('display' => 1);
+	$data = array('display' => $display);
 	return updateQuery('categories', $data, 'id = '.$id);
 }
 

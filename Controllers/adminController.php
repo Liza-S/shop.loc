@@ -134,12 +134,12 @@ function delete_category() {
 
 function hide_category() {
     addModel('admin');
-    hideCategory();
+    hide_showCategory(0);
 }
 
 function show_category() {
     addModel('admin');
-    showCategory();
+    hide_showCategory(1);
 }
 
 function products($params) {
