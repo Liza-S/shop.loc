@@ -1,7 +1,8 @@
 $(function(){
 	$('.deleteCategory').on('click', confirmCategoryDel);
-	$('.changeCategoryName').on('click', createInput);
-	$('.hideCategory').on('click', hide_showCategory)
+	$('.changeCategoryName').on('click', createInputName);
+	$('.hideCategory').on('click', hide_showCategory);
+	$('.changeCategoryURL').on('click', createInputURL);
 })
 
 function hide_showCategory(e) {
@@ -58,7 +59,7 @@ function confirmCategoryDel(e){
 
 }
 
-function createInput(e){
+function createInputName(e){
 	e.preventDefault();
 
 	var categoryId = $(this).data('categoryid');
@@ -92,6 +93,48 @@ function createInput(e){
 					}
 				});
 			} else $elCatName.html(oldName);
+			
+		}
+
+		
+	}
+
+}
+
+function createInputURL(e){
+	e.preventDefault();
+
+	var categoryId = $(this).data('categoryid');
+	var $elCatURL = $(this).parents('tr').find('.categoryURL');
+	var $input = $("<input type='text' name='name' value='" + $elCatURL.text() + "' style='width: 100%;' autofocus>");
+	var oldURL = $elCatURL.text();
+
+	$elCatURL.html($input);
+	$input.select();
+
+	$input.on('focusout', sendNewURL(categoryId, oldURL, $elCatURL))
+
+	function sendNewURL(categoryId, oldURL, $elCatURL){
+
+
+		return function(){
+			//var url = categoryId + '/edit/';
+			var newURL = $(this).val();
+
+			if(newURL != oldURL) {
+
+				console.log(categoryId);
+
+				$.ajax({
+					type: 'POST',
+					url: '/admin/change_category_url',
+					data: {'newURL': newURL, 'id':categoryId},
+					success: function(newName) {
+						console.log(newURL);
+						$elCatURL.text(newURL);
+					}
+				});
+			} else $elCatURL.html(oldURL);
 			
 		}
 

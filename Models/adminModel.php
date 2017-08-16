@@ -33,6 +33,14 @@ function changeCategoryName() {
 	return updateQuery('categories', $data, 'id = '.$id);
 }
 
+function changeCategoryURL() {
+	$name =  htmlspecialchars($_POST['newURL'], ENT_QUOTES);
+	$id = $_POST['id'];
+	$data = array('url' => $name);
+
+	return updateQuery('categories', $data, 'id = '.$id);
+}
+
 function deleteCategory() {
 	$id = $_POST['id'];
 	//dd($id);

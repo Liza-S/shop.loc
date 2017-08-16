@@ -15,6 +15,7 @@
         <thead>
             <tr>
                 <th>Название категории</th>
+                <th>URL</th>
                 <th></th>
             </tr>
         </thead>
@@ -26,8 +27,10 @@
 
         <tr>
             <td class="categoryName"><?=$cat['name']?></td>
+            <td class="categoryURL"><?=$cat['url']?></td>
             <td>
                 <a class="changeCategoryName" data-categoryId="<?=$cat['id']?>"  href="">Изменить</a>&nbsp;&nbsp;
+                <a class="changeCategoryURL" data-categoryId="<?=$cat['id']?>"  href="">Изменить URL</a>&nbsp;&nbsp;
                 <a class='deleteCategory' data-categoryId="<?=$cat['id']?>" href="http://shop.loc/admin/category/<?=$cat['id']?>/del/">Удалить</a>&nbsp;&nbsp;
                 <a class='hideCategory' data-action='<?= $cat['display'] == 0 ? 'show' : 'hide' ?>' data-categoryId="<?=$cat['id']?>" href="http://shop.loc/admin/category/<?=$cat['id']?>/hide/"><?= $cat['display'] == 0 ? 'Показать' : 'Скрыть' ?></a>
             </td>

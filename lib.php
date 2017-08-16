@@ -61,6 +61,10 @@ function route() {
                 $action = 'change_category_name';
             }
 
+            else if(isset($slices[1]) && $slices[1] == 'change_category_url') {
+                $action = 'change_category_url';
+            }
+
             else if(isset($slices[1]) && $slices[1] == 'delete_category') {
                 $action = 'delete_category';
             }

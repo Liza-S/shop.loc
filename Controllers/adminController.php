@@ -127,6 +127,11 @@ function change_category_name () {
     changeCategoryName();
 }
 
+function change_category_url () {
+    addModel('admin');
+    changeCategoryURL();
+}
+
 function delete_category() {
     addModel('admin');
     deleteCategory();
