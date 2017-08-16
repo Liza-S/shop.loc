@@ -48,22 +48,22 @@ function orders_rejected() {
 
 function move_rejected() {
     addModel('admin');
-    moveRejected();
+    moveOrder(3);
 }
 
 function move_done() {
     addModel('admin');
-    moveDone();
+    moveOrder(2);
 }
 
 function move_deleted() {
     addModel('admin');
-    deleteOrder();
+    moveOrder(5);
 }
 
 function move_archived() {
     addModel('admin');
-    archiveOrder();
+    moveOrder(4);
 }
 
 function orders_archive() {

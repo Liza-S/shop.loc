@@ -13,27 +13,9 @@ function getOrderInfo($id) {
 	return selectQuery(array('*'),'orders', 'id = '.$id);
 }
 
-function moveRejected() {
+function moveOrder($status) {
 	$id = $_POST['id'];
-	$data = array('status' => 3);
-	return updateQuery('orders', $data, 'id = '.$id);
-}
-
-function moveDone() {
-	$id = $_POST['id'];
-	$data = array('status' => 2);
-	return updateQuery('orders', $data, 'id = '.$id);
-}
-
-function deleteOrder() {
-	$id = $_POST['id'];
-	$data = array('status' => 5);
-	return updateQuery('orders', $data, 'id = '.$id);
-}
-
-function archiveOrder() {
-	$id = $_POST['id'];
-	$data = array('status' => 4);
+	$data = array('status' => $status);
 	return updateQuery('orders', $data, 'id = '.$id);
 }
 
