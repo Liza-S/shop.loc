@@ -21,9 +21,9 @@ function auth() {
             if($admin['login'] == $uName && $admin['pass'] == $uPass) {
                 $_SESSION['login'] = $uName;
                 $_SESSION['pass'] = $uPass;
-                orders_new();
+                //orders_new();
                 //adminView('admin', 'orders.html');
-                //header("Location:" . '/admin/orders.html');
+                header("Location: /admin/orders_new/");
                 exit;
             }
 
@@ -119,7 +119,7 @@ function category_add() {
 	$data = array('id' => 'NULL', 'name' => $name, 'url' =>  $url , 'display' =>$display);
 	insertQuery('categories', $data);
 	//echo 'Категория успешно добавлена в БД';
-    header("refresh: 0; url=http://shop.loc/admin/category/");
+    header("Location: /admin/category/");
 }
 
 function change_category_name () {

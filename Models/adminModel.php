@@ -67,6 +67,9 @@ function deleteCategory() {
 	$id = $_POST['id'];
 	//dd($id);
 	deleteQuery('categories', 'id = '.$id);
+	//$pics = PATH_TO_DELETE;
+	//$imgs_src = selectQuery(array('img_src'), 'products', 'category_id = '.$id);
+	//dd($imgs_src);
 	deleteQuery('products', 'category_id = '.$id );
 }
 
@@ -127,7 +130,7 @@ function addProduct() {
 	insertQuery('products', $data);
 	//echo 'Продукт успешно добавлен в БД';
 	//dd($image);
-    header("refresh: 0; url=http://shop.loc/admin/products/");
+    header("Location: /admin/products/");
 }
 
 function deleteProduct() {
