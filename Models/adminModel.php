@@ -116,15 +116,9 @@ function deleteProduct() {
 	//dd($id);
 }
 
-function hideProduct() {
+function hide_showProduct($display) {
 	$id = $_POST['id'];
-	$data = array('display' => 0);
-	return updateQuery('products', $data, 'id = '.$id);
-}
-
-function showProduct() {
-	$id = $_POST['id'];
-	$data = array('display' => 1);
+	$data = array('display' => $display);
 	return updateQuery('products', $data, 'id = '.$id);
 }
 

@@ -172,13 +172,12 @@ function delete_product() {
 
 function hide_product() {
     addModel('admin');
-    hideProduct();
+    hide_showProduct(0);
 }
 
 function show_product() {
-    dd($_POST);
     addModel('admin');
-    showProduct();
+    hide_showProduct(1);
 }
 
 function hide_main_product() {
