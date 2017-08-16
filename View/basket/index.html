@@ -22,7 +22,12 @@
 
 		<div class="row product table" data-item-price="<?=$prod['price']?>" data-prodId="<?=$prod['id']?>"> 
 		  	<div class="col-md-2 prodTitle" ><a href="/product/<?=$prod['id']?>/"><?=$prod['title']?></a></div>
-		  	<div class="col-md-2" ><img src="<?=$prod['img_src']?>"></div>
+		  	<div class="col-md-2" >
+		  	<? if($prod['img_src'] !== '/images/') {  ?>
+		  	<img src="<?=$prod['img_src']?>">
+		  	<? } else { ?>
+			<img src="https://upload.wikimedia.org/wikipedia/ru/a/ac/No_image_available.svg"/>
+			<? } ?></div>
 		  	<div class="col-md-3 text-left" ><?=$prod['description']?>
 			</div>
 		  	<div class="col-md-1 price"><?=$prod['price']?></div>

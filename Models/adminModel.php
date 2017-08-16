@@ -85,7 +85,10 @@ function addProduct() {
 		if($type = 2) $picName = md5($image) . '.jpg';
 		if($type = 3) $picName = md5($image) . '.png';
 		move_uploaded_file($image, PATH_TO_SAVE . DIRECTORY_SEPARATOR . $picName );
-	}
+		$imageToDB = '/images/' . $picName;
+	} else {
+        $imageToDB = '/images/';
+    }
 
 	if ($_POST['display'] == 'on') {
 		$display = '1';
@@ -96,11 +99,12 @@ function addProduct() {
 		$onMain = '1';
 	}
 	else $onMain = '0';
-	$data = array('id' => 'NULL', 'title' => $name, 'img_src' => '/images/' . $picName, 'price' => $price, 'description' => $description, 'category_id' => $categoryId, 'on_main' => $onMain, 'display' => $display);
+	$data = array('id' => 'NULL', 'title' => $name, 'img_src' => $imageToDB, 'price' => $price, 'description' => $description, 'category_id' => $categoryId, 'on_main' => $onMain, 'display' => $display);
 	insertQuery('products', $data);
 	//echo 'Продукт успешно добавлен в БД';
 	//dd($image);
     header("Location: /admin/products/");
+    die();
 }
 
 function deleteProduct() {

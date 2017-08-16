@@ -9,7 +9,11 @@
 			<div class="span1_of_1">
 				<!-- start product_slider -->
 				<div class="product-view">
+					<? if($prod['img_src'] !== '/images/') {  ?>
 					<img src="<?=$prod['img_src']?>" alt="<?=$prod['title']?>" title="<?=$prod['title']?>" />
+					<? } else { ?>
+					<img src="https://upload.wikimedia.org/wikipedia/ru/a/ac/No_image_available.svg"/>
+					<? } ?>
 				</div>
 				<!-- end product_slider -->
 			</div>
