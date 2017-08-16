@@ -182,12 +182,12 @@ function show_product() {
 
 function hide_main_product() {
     addModel('admin');
-    hideProductOnMain();
+    hide_showProductOnMain(0);
 }
 
 function show_main_product() {
     addModel('admin');
-    showProductOnMain();
+    hide_showProductOnMain(1);
 }
 
 function product_detail($params) {

@@ -122,15 +122,9 @@ function hide_showProduct($display) {
 	return updateQuery('products', $data, 'id = '.$id);
 }
 
-function hideProductOnMain() {
+function hide_showProductOnMain($on_main) {
 	$id = $_POST['id'];
-	$data = array('on_main' => 0);
-	return updateQuery('products', $data, 'id = '.$id);
-}
-
-function showProductOnMain() {
-	$id = $_POST['id'];
-	$data = array('on_main' => 1);
+	$data = array('on_main' => $on_main);
 	return updateQuery('products', $data, 'id = '.$id);
 }
 
