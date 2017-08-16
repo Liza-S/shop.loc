@@ -8,6 +8,10 @@ function index($params) {
         'product' => getProductInfo($params),
     );
     //dd($data);
+    if(!$data['product'] or $data['product'][0]['display'] == 0){
+        header('Location: /404/');
+        die();
+    }
     view('product', 'index.html', $data);
 }
 
