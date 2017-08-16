@@ -64,10 +64,10 @@ function getIdFromUrlCat($url) {
 }
 
 function addProduct() {
-	$name = $_POST['title'];
-	$description = $_POST['description'];
-	$categoryId = $_POST['categoryId'];
-	$price = $_POST['price'];
+	$name = htmlspecialchars($_POST['title'], ENT_QUOTES);
+	$description = htmlspecialchars($_POST['description'], ENT_QUOTES);
+	$categoryId = intval($_POST['categoryId']);
+	$price = floatval($_POST['price']);
 	$image = $_FILES['file']['tmp_name'];
 
 	$type = exif_imagetype($image);
@@ -130,11 +130,11 @@ function getCategoryNameById($category_id) {
 }
 
 function productChange() {
-	$id = $_POST['id'];
-	$name = $_POST['title'];
-	$description = $_POST['description'];
-	$categoryId = $_POST['categoryId'];
-	$price = $_POST['price'];
+	$id = intval($_POST['id']);
+	$name = htmlspecialchars($_POST['title'], ENT_QUOTES);
+	$description = htmlspecialchars($_POST['description'], ENT_QUOTES);
+	$categoryId = intval($_POST['categoryId']);
+	$price = floatval($_POST['price']);
 	$image = $_FILES['file']['tmp_name'];
 	$type = exif_imagetype($image);
 	//dd($type);
@@ -157,5 +157,5 @@ function productChange() {
 	$data = array('id' => $id, 'title' => $name, 'img_src' => '/images/' . $picName, 'price' => $price, 'description' => $description, 'category_id' => $categoryId, 'on_main' => $onMain, 'display' => $display);
 	//dd($data);
 	updateQuery('products', $data, 'id = '.$id);
-	header("refresh: 0; url=http://shop.loc/admin/products/");
+	header("Location: /admin/products/");
 }
