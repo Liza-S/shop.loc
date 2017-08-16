@@ -2,7 +2,7 @@
 
 function orders_new() {
     addModel('admin');
-    $data = array('orders' => getNewOrders());
+    $data = array('orders' => getOrders(1));
     //dd($data);
     adminView('admin', 'orders.html', $data);
 }
@@ -34,14 +34,14 @@ function auth() {
 
 function orders_done() {
     addModel('admin');
-    $data = array('orders' => getDoneOrders());
+    $data = array('orders' => getOrders(2));
     //dd($data);
     adminView('admin', 'orders.html', $data);
 }
 
 function orders_rejected() {
     addModel('admin');
-    $data = array('orders' => getRejectedOrders());
+    $data = array('orders' => getOrders(3));
     //dd($data);
     adminView('admin', 'orders.html', $data);
 }
@@ -68,7 +68,7 @@ function move_archived() {
 
 function orders_archive() {
     addModel('admin');
-    $data = array('orders' => getArchiveOrders());
+    $data = array('orders' => getOrders(4));
     //dd($data);
     adminView('admin', 'orders.html', $data);
 }

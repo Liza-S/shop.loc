@@ -5,20 +5,8 @@ function getAllCategories() {
     /*dd($s);*/
 }
 
-function getNewOrders() {
-	return selectQuery(array('*'), ' orders', 'status = 1');
-}
-
-function getDoneOrders() {
-	return selectQuery(array('*'), ' orders', 'status = 2');
-}
-
-function getRejectedOrders() {
-	return selectQuery(array('*'), ' orders', 'status = 3');
-}
-
-function getArchiveOrders() {
-	return selectQuery(array('*'), ' orders', 'status = 4');
+function getOrders($status) {
+    return selectQuery(array('*'), ' orders', 'status = "' . $status . '"');
 }
 
 function getOrderInfo($id) {
