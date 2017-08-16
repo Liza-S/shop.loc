@@ -55,10 +55,10 @@ function changeCount() {
 
 function acceptOrder() {
 	$time = date("d-m-Y, G:i");
-	$phone = $_POST['customerPhone_number'];
-	$email = $_POST['customerEmail'];
-	$name = $_POST['customerFIO'];
-	$address = $_POST['customerAddress'];
+	$phone = intval($_POST['customerPhone_number']);
+	$email = htmlspecialchars($_POST['customerEmail'],ENT_QUOTES);
+	$name = htmlspecialchars($_POST['customerFIO'],ENT_QUOTES);
+	$address = htmlspecialchars($_POST['customerAddress'],ENT_QUOTES);
 	$order = getBasketProduct();
 	$basket = serialize($order);
 	$paid = '0';
