@@ -106,9 +106,9 @@ function category() {
 function category_add() {
 	//var_dump($_POST);
 	/*код добавления новой категории в БД*/
-	$name = $_POST['name'];
+	$name = htmlspecialchars($_POST['name'], ENT_QUOTES);
 	//$name = strval($name);
-	$url = $_POST['url'];
+	$url = htmlspecialchars($_POST['url'], ENT_QUOTES);
 	//$url = strval($name);
 
 	if ($_POST['display'] == 'on') {

@@ -26,7 +26,7 @@ function changePaidStatus() {
 }
 
 function changeCategoryName() {
-	$name = $_POST['newName'];
+	$name =  htmlspecialchars($_POST['newName'], ENT_QUOTES);
 	$id = $_POST['id'];
 	$data = array('name' => $name);
 
