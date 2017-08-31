@@ -29,3 +29,11 @@ Possibilities of the admin part of the site:
 * View and change the order status
 
 Login to the admin panel via the authorization page.
+
+![](https://github.com/Liza-S/shop.loc/blob/master/img/1.jpg)
+![](https://github.com/Liza-S/shop.loc/blob/master/img/2.jpg)
+![](https://github.com/Liza-S/shop.loc/blob/master/img/3.jpg)
+![](https://github.com/Liza-S/shop.loc/blob/master/img/5.jpg)
+![](https://github.com/Liza-S/shop.loc/blob/master/img/6.jpg)
+![](https://github.com/Liza-S/shop.loc/blob/master/img/9.jpg)
+![](https://github.com/Liza-S/shop.loc/blob/master/img/7.jpg)
